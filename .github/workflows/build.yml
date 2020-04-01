@@ -1,0 +1,31 @@
+name: Build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    name: Test
+    runs-on: macOS-latest
+    
+    strategy:
+        matrix:
+          destination: ['platform=iOS Simulator,OS=latest,name=iPhone 11']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Force Xcode
+        run: sudo xcode-select -switch /Applications/Xcode_11.4_beta.app
+      - name: Show devices
+        run: xcodebuild test -project Covid.xcodeproj -scheme Covid -destination "name=NoSuchName" -destination-timeout 1 || exit 0
+      - name: Build and test
+        run: |
+          xcodebuild -version
+          xcodebuild clean test -project Covid.xcodeproj -scheme Covid -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+        env: 
+         destination: ${{ matrix.destination }}
+      - name: Update Code Coverage
+        run: bash <(curl -s https://codecov.io/bash)
