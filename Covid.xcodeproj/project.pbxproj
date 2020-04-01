@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1463D42434F6A90089D7D5 /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1463D32434F6A90089D7D5 /* CountryView.swift */; };
 		CE77834524332CDD007321B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77834424332CDD007321B9 /* AppDelegate.swift */; };
 		CE77834724332CDD007321B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77834624332CDD007321B9 /* SceneDelegate.swift */; };
 		CE77834924332CDD007321B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77834824332CDD007321B9 /* ContentView.swift */; };
@@ -27,7 +28,6 @@
 		CEE47B8C24337CAA005484BE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE47B8B24337CAA005484BE /* AppState.swift */; };
 		CEE47B9024337D96005484BE /* AllCasesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE47B8F24337D96005484BE /* AllCasesCell.swift */; };
 		CEE47B922433826E005484BE /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE47B912433826E005484BE /* AppReducer.swift */; };
-		CEE47B972433BCD6005484BE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CEE47B962433BCD6005484BE /* Alamofire */; };
 		CEE47B9A2433CFF6005484BE /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = CEE47B992433CFF6005484BE /* SwiftyBeaver */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE1463D32434F6A90089D7D5 /* CountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryView.swift; sourceTree = "<group>"; };
 		CE77834124332CDD007321B9 /* Covid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Covid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE77834424332CDD007321B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE77834624332CDD007321B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEE47B972433BCD6005484BE /* Alamofire in Frameworks */,
 				CEE47B9A2433CFF6005484BE /* SwiftyBeaver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,9 +171,10 @@
 			isa = PBXGroup;
 			children = (
 				CE77834824332CDD007321B9 /* ContentView.swift */,
-				CEA426072433387C0002D4BE /* CaseDetailCell.swift */,
 				CEAA4A36243345D200130351 /* ActivityIndicator.swift */,
+				CEA426072433387C0002D4BE /* CaseDetailCell.swift */,
 				CEE47B8F24337D96005484BE /* AllCasesCell.swift */,
+				CE1463D32434F6A90089D7D5 /* CountryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,7 +226,6 @@
 			);
 			name = Covid;
 			packageProductDependencies = (
-				CEE47B962433BCD6005484BE /* Alamofire */,
 				CEE47B992433CFF6005484BE /* SwiftyBeaver */,
 			);
 			productName = Covid;
@@ -301,7 +301,6 @@
 			);
 			mainGroup = CE77833824332CDD007321B9;
 			packageReferences = (
-				CEE47B952433BCD6005484BE /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CEE47B982433CFF6005484BE /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 			);
 			productRefGroup = CE77834224332CDD007321B9 /* Products */;
@@ -358,6 +357,7 @@
 				CE77834724332CDD007321B9 /* SceneDelegate.swift in Sources */,
 				CE9A9F9124347FF0000CD1AA /* Publisher.swift in Sources */,
 				CEE47B922433826E005484BE /* AppReducer.swift in Sources */,
+				CE1463D42434F6A90089D7D5 /* CountryView.swift in Sources */,
 				CEE47B7F24337A4C005484BE /* Reducer.swift in Sources */,
 				CEAA4A37243345D200130351 /* ActivityIndicator.swift in Sources */,
 				CEE47B8C24337CAA005484BE /* AppState.swift in Sources */,
@@ -688,14 +688,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CEE47B952433BCD6005484BE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.5;
-			};
-		};
 		CEE47B982433CFF6005484BE /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver.git";
@@ -707,11 +699,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CEE47B962433BCD6005484BE /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CEE47B952433BCD6005484BE /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
 		CEE47B992433CFF6005484BE /* SwiftyBeaver */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CEE47B982433CFF6005484BE /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;

@@ -33,7 +33,9 @@ struct Home: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 15) {
                             ForEach(self.store.state.countryCases, id: \.self) { i in
-                                CaseDetailCell(data: i)
+                                NavigationLink(destination: Text(i.country)) {
+                                    CaseDetailCell(data: i)
+                                }
                             }
                         }
                         .padding()
