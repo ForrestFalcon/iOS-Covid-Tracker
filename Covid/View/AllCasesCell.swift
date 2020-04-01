@@ -32,7 +32,6 @@ struct AllCasesCell: View {
 
                 Button(action: {
                     self.store.send(.loadAllCases)
-                    self.store.send(.loadAllCountries)
                 }) {
                     Image(systemName: "arrow.clockwise")
                         .font(.title)
