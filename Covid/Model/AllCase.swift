@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Case : Decodable {
+struct AllCases : Decodable {
     var cases : Double
     var deaths : Double
     var updated : Double
@@ -16,17 +16,9 @@ struct Case : Decodable {
     var active : Double
 }
 
-struct Details : Decodable, Hashable {
-    var country : String
-    var cases : Double
-    var deaths : Double
-    var recovered : Double
-    var critical : Double
-}
-
 class getData : ObservableObject {
 
-    @Published var data : Case!
+    @Published var data : AllCases!
     @Published var countries = [Details]()
 
     init() {
@@ -34,24 +26,9 @@ class getData : ObservableObject {
     }
 
     func updateData() {
-        let url = "https://corona.lmao.ninja/all"
         let url1 = "https://corona.lmao.ninja/countries/"
 
-        let session = URLSession(configuration: .default)
         let session1 = URLSession(configuration: .default)
-
-        session.dataTask(with: URL(string: url)!) { (data, _, err) in
-            if err != nil {
-                print((err?.localizedDescription)!)
-                return
-            }
-
-            let json = try! JSONDecoder().decode(Case.self, from: data!)
-
-            DispatchQueue.main.async {
-                self.data = json
-            }
-        }.resume()
 
         for i in country {
 

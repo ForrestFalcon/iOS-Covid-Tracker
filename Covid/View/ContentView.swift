@@ -16,126 +16,61 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(Store(initialState: AppState(), reducer: Reducer.appReducer()))
     }
 }
 
 struct Home: View {
+    @EnvironmentObject
+    private var store: Store<AppState, AppAction>
 
     @ObservedObject var data = getData()
 
     var body: some View {
-        VStack {
-            if self.data.countries.count != 0 && self.data.data != nil {
-                VStack {
-                    HStack(alignment: .top) {
-                        VStack(alignment: .leading, spacing: 18) {
-                            Text(getDate(time: self.data.data.updated))
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white)
-                            Text("Covid - 19 Cases")
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white)
-                            Text(getValue(data: self.data.data.cases))
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white)
-                        }
+        ActivityIndicatorView(isShowing: .constant(self.store.state.loadAllCases)) {
+            VStack {
+                AllCasesCell()
 
-                        Spacer()
-
-                        Button(action: {
-                            self.data.data = nil
-                            self.data.countries.removeAll()
-                            self.data.updateData()
-                        }) {
-                            Image(systemName: "arrow.clockwise")
-                                .font(.title)
-                                .foregroundColor(.white)
-                        }
-                    }
-                    .padding(.top, (UIApplication.shared.windows.first?.safeAreaInsets.top)! + 18)
-                    .padding()
-                    .padding(.bottom, 80)
-                    .background(Color.red)
-
-                    HStack(spacing: 15) {
-                        VStack(alignment: .leading, spacing: 15) {
-                            Text("Deaths")
-                                .foregroundColor(Color.black.opacity(0.5))
-
-                            Text(getValue(data: self.data.data.deaths))
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(.red)
-                        }.padding(.horizontal, 20)
-                            .padding(.vertical, 30)
-                            .background(Color.white)
-                            .cornerRadius(12)
-
-                        VStack(alignment: .leading, spacing: 15) {
-                            Text("Recovered")
-                                .foregroundColor(Color.black.opacity(0.5))
-
-                            Text("3655")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(.green)
-                        }.padding(.horizontal, 20)
-                            .padding(.vertical, 30)
-                            .background(Color.white)
-                            .cornerRadius(12)
-                    }
-                    .offset(y: -60)
-                    .padding(.bottom, -60)
-                    .zIndex(25)
-
-                    VStack(alignment: .center, spacing: 15) {
-                        Text("Active Cases")
-                            .foregroundColor(Color.black.opacity(0.5))
-
-                        Text(getValue(data: self.data.data.active))
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(.yellow)
-                    }.padding(.horizontal)
-                        .padding(.vertical, 30)
-                        .background(Color.white)
-                        .cornerRadius(12)
-                        .padding(.top, 15)
-
+                if self.data.countries.count != 0 {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 15) {
                             ForEach(self.data.countries, id: \.self) { i in
-                                CellView(data : i)
+                                CaseDetailCell(data: i)
                             }
                         }
                         .padding()
 
                         Spacer()
                     }
+                } else {
+                    Spacer()
                 }
-            } else {
-                GeometryReader{_ in
-                    VStack {
-                        ActivityIndicator(style: .large)
-                    }
-                }
-            }
-        }.edgesIgnoringSafeArea(.top)
-            .background(Color.black.opacity(0.1).edgesIgnoringSafeArea(.all))
+            }.edgesIgnoringSafeArea(.top)
+                .background(Color.black.opacity(0.1).edgesIgnoringSafeArea(.all))
+        }.onAppear {
+            self.store.send(.loadAllCases)
+        }
     }
 }
 
-func getDate(time: Double) -> String {
-    let date = Double(time / 1000)
+func getDate(time: Double?) -> String {
+    guard let d = time else {
+        return "-"
+    }
+
+    let date = Double(d / 1000)
     let format = DateFormatter()
     format.dateFormat = "MMM - dd - YYYY hh:mm a"
 
     return format.string(from: Date(timeIntervalSince1970: TimeInterval(exactly: date)!))
 }
 
-func getValue(data : Double) -> String {
+func getValue(data: Double?) -> String {
+    guard let d = data else {
+        return "-"
+    }
+
     let format = NumberFormatter()
     format.numberStyle = .decimal
-    return format.string(for: data)!
+    return format.string(for: d)!
 }

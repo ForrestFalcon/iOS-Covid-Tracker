@@ -1,5 +1,5 @@
 //
-//  CellView.swift
+//  CaseDetailCell.swift
 //  Covid
 //
 //  Created by Kevin Stieglitz on 31.03.20.
