@@ -24,17 +24,15 @@ struct Home: View {
     @EnvironmentObject
     private var store: Store<AppState, AppAction>
 
-    @ObservedObject var data = getData()
-
     var body: some View {
         ActivityIndicatorView(isShowing: .constant(self.store.state.loadAllCases)) {
             VStack {
                 AllCasesCell()
 
-                if self.data.countries.count != 0 {
+                if self.store.state.countryCases.count != 0 {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 15) {
-                            ForEach(self.data.countries, id: \.self) { i in
+                            ForEach(self.store.state.countryCases, id: \.self) { i in
                                 CaseDetailCell(data: i)
                             }
                         }

@@ -10,5 +10,6 @@ import Foundation
 
 struct AppState {
     var loadAllCases = false
+    var countryCases = [Details]()
     var allCases: AllCases? = nil
 }

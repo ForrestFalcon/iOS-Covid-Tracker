@@ -9,7 +9,11 @@
 import Foundation
 
 enum AppAction {
+    case loadCasesInfo
+    case setCasesInfo(case: AllCases)
+    case setCountryDetails(detail: [Details])
+    case loadAllCountries
     case loadAllCases
-    case setAllCases(case: AllCases)
+    case setAllCases(case: AllCases, detail: [Details])
     case error
 }
