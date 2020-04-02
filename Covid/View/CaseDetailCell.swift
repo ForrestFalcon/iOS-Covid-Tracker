@@ -13,47 +13,50 @@ struct CaseDetailCell: View {
     var country: Details
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 15) {
-            Text(country.country)
-                .fontWeight(.bold)
+        NavigationLink(destination: CountryView(country: country.country)) {
+            VStack(alignment: .leading, spacing: 15) {
+                Text(country.country)
+                    .fontWeight(.bold)
 
-            HStack(spacing: 15) {
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("Active Cases")
-                        .fontWeight(.bold)
+                HStack(spacing: 15) {
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("Active Cases")
+                            .fontWeight(.bold)
 
-                    Text(getValue(data: country.cases))
-                        .font(.title)
-                }
-
-                VStack(alignment: .leading, spacing: 12) {
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Deaths")
-
-                        Text(getValue(data: country.deaths))
-                            .foregroundColor(.red)
+                        Text(getValue(data: country.cases))
+                            .font(.title)
                     }
 
-                    Divider()
+                    VStack(alignment: .leading, spacing: 12) {
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Deaths")
 
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Recovered")
+                            Text(getValue(data: country.deaths))
+                                .foregroundColor(.red)
+                        }
 
-                        Text(getValue(data: country.recovered))
-                            .foregroundColor(.green)
-                    }
+                        Divider()
 
-                    Divider()
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Recovered")
 
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Critical")
+                            Text(getValue(data: country.recovered))
+                                .foregroundColor(.green)
+                        }
 
-                        Text(getValue(data: country.critical))
-                            .foregroundColor(.yellow)
+                        Divider()
+
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Critical")
+
+                            Text(getValue(data: country.critical))
+                                .foregroundColor(.yellow)
+                        }
                     }
                 }
             }
         }
+        .buttonStyle(PlainButtonStyle())
         .padding()
         .background(Color.white)
         .cornerRadius(20)

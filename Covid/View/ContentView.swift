@@ -14,27 +14,32 @@ struct ContentView: View {
     private var store: Store<AppState, AppAction>
 
     var body: some View {
-        ActivityIndicatorView(isShowing: .constant(self.store.state.loadAllCases)) {
-            VStack {
-                AllCasesCell()
+        NavigationView {
+            ActivityIndicatorView(isShowing: .constant(self.store.state.loadAllCases)) {
+                VStack {
+                    AllCasesCell()
 
-                if self.store.state.countryCases.count != 0 {
-                    CaseDetailPagerView(countries: self.store.state.countryCases)
-                } else {
-                    Spacer()
-                }
-            }.edgesIgnoringSafeArea(.top)
-                .background(Color.black.opacity(0.1).edgesIgnoringSafeArea(.all))
-        }.onAppear {
-            self.store.send(.loadAllCases)
+                    if self.store.state.countryCases.count != 0 {
+                        CaseDetailPagerView(countries: self.store.state.countryCases)
+                    } else {
+                        Spacer()
+                    }
+                }.edgesIgnoringSafeArea(.top)
+                    .background(Color.black.opacity(0.1).edgesIgnoringSafeArea(.all))
+            }.onAppear {
+                self.store.send(.loadAllCases)
+            }
         }
     }
-
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(Store(initialState: AppState(), reducer: Reducer.appReducer()))
+        ContentView().environmentObject(Store(initialState: AppState(
+            loadAllCases: false,
+            countryCases: [],
+            allCases: nil
+        ), reducer: Reducer.appReducer()))
     }
 }
 

@@ -9,6 +9,12 @@
 import Combine
 import Foundation
 
+enum AppAction {
+    case loadAllCases
+    case setAllCases(case: AllCases, detail: [Details])
+    case error
+}
+
 extension Reducer where State == AppState, Action == AppAction {
     static func appReducer() -> Reducer {
         let coronaService = CoronaService()
@@ -22,6 +28,9 @@ extension Reducer where State == AppState, Action == AppAction {
                 state.allCases = cases
                 state.countryCases = details
                 state.loadAllCases = false
+
+                log.info(cases)
+                log.info(details)
             case .loadAllCases:
                 state.loadAllCases = true
                 return handleLoadAllCase(service: coronaService)

@@ -10,6 +10,12 @@
 		CE1463D42434F6A90089D7D5 /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1463D32434F6A90089D7D5 /* CountryView.swift */; };
 		CE1463D72435D6150089D7D5 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = CE1463D62435D6150089D7D5 /* SwiftUIPager */; };
 		CE1463D92435DD2B0089D7D5 /* CaseDetailPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1463D82435DD2B0089D7D5 /* CaseDetailPagerView.swift */; };
+		CE1463DB2435E7230089D7D5 /* Historical.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1463DA2435E7230089D7D5 /* Historical.swift */; };
+		CE1463DD2435E96A0089D7D5 /* CountryReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1463DC2435E96A0089D7D5 /* CountryReducer.swift */; };
+		CE1463DF2435E9CC0089D7D5 /* CountryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1463DE2435E9CC0089D7D5 /* CountryState.swift */; };
+		CE1463E22435F0010089D7D5 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = CE1463E12435F0010089D7D5 /* SwiftUICharts */; };
+		CE1463E42435F9360089D7D5 /* CountryCasesChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1463E32435F9360089D7D5 /* CountryCasesChart.swift */; };
+		CE1463E7243601950089D7D5 /* OptionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1463E6243601950089D7D5 /* OptionalView.swift */; };
 		CE77834524332CDD007321B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77834424332CDD007321B9 /* AppDelegate.swift */; };
 		CE77834724332CDD007321B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77834624332CDD007321B9 /* SceneDelegate.swift */; };
 		CE77834924332CDD007321B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77834824332CDD007321B9 /* ContentView.swift */; };
@@ -26,7 +32,6 @@
 		CEE47B8024337A4C005484BE /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE47B7E24337A4C005484BE /* Store.swift */; };
 		CEE47B8324337AA4005484BE /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE47B8224337AA4005484BE /* Detail.swift */; };
 		CEE47B8524337B12005484BE /* CoronaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE47B8424337B12005484BE /* CoronaService.swift */; };
-		CEE47B8A24337C40005484BE /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE47B8924337C40005484BE /* AppAction.swift */; };
 		CEE47B8C24337CAA005484BE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE47B8B24337CAA005484BE /* AppState.swift */; };
 		CEE47B9024337D96005484BE /* AllCasesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE47B8F24337D96005484BE /* AllCasesCell.swift */; };
 		CEE47B922433826E005484BE /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE47B912433826E005484BE /* AppReducer.swift */; };
@@ -53,6 +58,11 @@
 /* Begin PBXFileReference section */
 		CE1463D32434F6A90089D7D5 /* CountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryView.swift; sourceTree = "<group>"; };
 		CE1463D82435DD2B0089D7D5 /* CaseDetailPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseDetailPagerView.swift; sourceTree = "<group>"; };
+		CE1463DA2435E7230089D7D5 /* Historical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Historical.swift; sourceTree = "<group>"; };
+		CE1463DC2435E96A0089D7D5 /* CountryReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryReducer.swift; sourceTree = "<group>"; };
+		CE1463DE2435E9CC0089D7D5 /* CountryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryState.swift; sourceTree = "<group>"; };
+		CE1463E32435F9360089D7D5 /* CountryCasesChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCasesChart.swift; sourceTree = "<group>"; };
+		CE1463E6243601950089D7D5 /* OptionalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalView.swift; sourceTree = "<group>"; };
 		CE77834124332CDD007321B9 /* Covid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Covid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE77834424332CDD007321B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE77834624332CDD007321B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,7 +85,6 @@
 		CEE47B7E24337A4C005484BE /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		CEE47B8224337AA4005484BE /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		CEE47B8424337B12005484BE /* CoronaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaService.swift; sourceTree = "<group>"; };
-		CEE47B8924337C40005484BE /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
 		CEE47B8B24337CAA005484BE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		CEE47B8F24337D96005484BE /* AllCasesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCasesCell.swift; sourceTree = "<group>"; };
 		CEE47B912433826E005484BE /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
@@ -86,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1463E22435F0010089D7D5 /* SwiftUICharts in Frameworks */,
 				CE1463D72435D6150089D7D5 /* SwiftUIPager in Frameworks */,
 				CEE47B9A2433CFF6005484BE /* SwiftyBeaver in Frameworks */,
 			);
@@ -108,6 +118,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE1463E5243601800089D7D5 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CE1463E6243601950089D7D5 /* OptionalView.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		CE77833824332CDD007321B9 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +149,7 @@
 		CE77834324332CDD007321B9 /* Covid */ = {
 			isa = PBXGroup;
 			children = (
+				CE1463E5243601800089D7D5 /* Util */,
 				CEE47B8824337BDE005484BE /* Extensions */,
 				CEE47B8124337A71005484BE /* Model */,
 				CEE47B7C24337A37005484BE /* Redux */,
@@ -180,6 +199,7 @@
 				CE1463D82435DD2B0089D7D5 /* CaseDetailPagerView.swift */,
 				CEE47B8F24337D96005484BE /* AllCasesCell.swift */,
 				CE1463D32434F6A90089D7D5 /* CountryView.swift */,
+				CE1463E32435F9360089D7D5 /* CountryCasesChart.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,9 +209,10 @@
 			children = (
 				CEE47B7D24337A4C005484BE /* Reducer.swift */,
 				CEE47B7E24337A4C005484BE /* Store.swift */,
-				CEE47B8924337C40005484BE /* AppAction.swift */,
 				CEE47B8B24337CAA005484BE /* AppState.swift */,
 				CEE47B912433826E005484BE /* AppReducer.swift */,
+				CE1463DC2435E96A0089D7D5 /* CountryReducer.swift */,
+				CE1463DE2435E9CC0089D7D5 /* CountryState.swift */,
 			);
 			path = Redux;
 			sourceTree = "<group>";
@@ -202,6 +223,7 @@
 				CEA42609243338E20002D4BE /* AllCase.swift */,
 				CEE47B8224337AA4005484BE /* Detail.swift */,
 				CEE47B8424337B12005484BE /* CoronaService.swift */,
+				CE1463DA2435E7230089D7D5 /* Historical.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,6 +255,7 @@
 			packageProductDependencies = (
 				CEE47B992433CFF6005484BE /* SwiftyBeaver */,
 				CE1463D62435D6150089D7D5 /* SwiftUIPager */,
+				CE1463E12435F0010089D7D5 /* SwiftUICharts */,
 			);
 			productName = Covid;
 			productReference = CE77834124332CDD007321B9 /* Covid.app */;
@@ -309,6 +332,7 @@
 			packageReferences = (
 				CEE47B982433CFF6005484BE /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 				CE1463D52435D6150089D7D5 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
+				CE1463E02435F0010089D7D5 /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = CE77834224332CDD007321B9 /* Products */;
 			projectDirPath = "";
@@ -353,16 +377,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1463E7243601950089D7D5 /* OptionalView.swift in Sources */,
 				CEA426082433387C0002D4BE /* CaseDetailCell.swift in Sources */,
+				CE1463DD2435E96A0089D7D5 /* CountryReducer.swift in Sources */,
 				CE1463D92435DD2B0089D7D5 /* CaseDetailPagerView.swift in Sources */,
 				CEE47B9024337D96005484BE /* AllCasesCell.swift in Sources */,
-				CEE47B8A24337C40005484BE /* AppAction.swift in Sources */,
 				CE77834524332CDD007321B9 /* AppDelegate.swift in Sources */,
 				CEE47B8324337AA4005484BE /* Detail.swift in Sources */,
 				CEA4260A243338E20002D4BE /* AllCase.swift in Sources */,
 				CEE47B8024337A4C005484BE /* Store.swift in Sources */,
 				CEE47B8524337B12005484BE /* CoronaService.swift in Sources */,
 				CE77834724332CDD007321B9 /* SceneDelegate.swift in Sources */,
+				CE1463DF2435E9CC0089D7D5 /* CountryState.swift in Sources */,
 				CE9A9F9124347FF0000CD1AA /* Publisher.swift in Sources */,
 				CEE47B922433826E005484BE /* AppReducer.swift in Sources */,
 				CE1463D42434F6A90089D7D5 /* CountryView.swift in Sources */,
@@ -370,6 +396,8 @@
 				CEAA4A37243345D200130351 /* ActivityIndicator.swift in Sources */,
 				CEE47B8C24337CAA005484BE /* AppState.swift in Sources */,
 				CE77834924332CDD007321B9 /* ContentView.swift in Sources */,
+				CE1463DB2435E7230089D7D5 /* Historical.swift in Sources */,
+				CE1463E42435F9360089D7D5 /* CountryCasesChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,6 +732,14 @@
 				minimumVersion = 1.3.1;
 			};
 		};
+		CE1463E02435F0010089D7D5 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
 		CEE47B982433CFF6005484BE /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver.git";
@@ -719,6 +755,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE1463D52435D6150089D7D5 /* XCRemoteSwiftPackageReference "SwiftUIPager" */;
 			productName = SwiftUIPager;
+		};
+		CE1463E12435F0010089D7D5 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE1463E02435F0010089D7D5 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
 		};
 		CEE47B992433CFF6005484BE /* SwiftyBeaver */ = {
 			isa = XCSwiftPackageProductDependency;
