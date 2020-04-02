@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CE1463D42434F6A90089D7D5 /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1463D32434F6A90089D7D5 /* CountryView.swift */; };
+		CE1463D72435D6150089D7D5 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = CE1463D62435D6150089D7D5 /* SwiftUIPager */; };
+		CE1463D92435DD2B0089D7D5 /* CaseDetailPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1463D82435DD2B0089D7D5 /* CaseDetailPagerView.swift */; };
 		CE77834524332CDD007321B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77834424332CDD007321B9 /* AppDelegate.swift */; };
 		CE77834724332CDD007321B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77834624332CDD007321B9 /* SceneDelegate.swift */; };
 		CE77834924332CDD007321B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77834824332CDD007321B9 /* ContentView.swift */; };
@@ -50,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		CE1463D32434F6A90089D7D5 /* CountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryView.swift; sourceTree = "<group>"; };
+		CE1463D82435DD2B0089D7D5 /* CaseDetailPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseDetailPagerView.swift; sourceTree = "<group>"; };
 		CE77834124332CDD007321B9 /* Covid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Covid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE77834424332CDD007321B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE77834624332CDD007321B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1463D72435D6150089D7D5 /* SwiftUIPager in Frameworks */,
 				CEE47B9A2433CFF6005484BE /* SwiftyBeaver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +177,7 @@
 				CE77834824332CDD007321B9 /* ContentView.swift */,
 				CEAA4A36243345D200130351 /* ActivityIndicator.swift */,
 				CEA426072433387C0002D4BE /* CaseDetailCell.swift */,
+				CE1463D82435DD2B0089D7D5 /* CaseDetailPagerView.swift */,
 				CEE47B8F24337D96005484BE /* AllCasesCell.swift */,
 				CE1463D32434F6A90089D7D5 /* CountryView.swift */,
 			);
@@ -227,6 +232,7 @@
 			name = Covid;
 			packageProductDependencies = (
 				CEE47B992433CFF6005484BE /* SwiftyBeaver */,
+				CE1463D62435D6150089D7D5 /* SwiftUIPager */,
 			);
 			productName = Covid;
 			productReference = CE77834124332CDD007321B9 /* Covid.app */;
@@ -302,6 +308,7 @@
 			mainGroup = CE77833824332CDD007321B9;
 			packageReferences = (
 				CEE47B982433CFF6005484BE /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
+				CE1463D52435D6150089D7D5 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
 			);
 			productRefGroup = CE77834224332CDD007321B9 /* Products */;
 			projectDirPath = "";
@@ -347,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA426082433387C0002D4BE /* CaseDetailCell.swift in Sources */,
+				CE1463D92435DD2B0089D7D5 /* CaseDetailPagerView.swift in Sources */,
 				CEE47B9024337D96005484BE /* AllCasesCell.swift in Sources */,
 				CEE47B8A24337C40005484BE /* AppAction.swift in Sources */,
 				CE77834524332CDD007321B9 /* AppDelegate.swift in Sources */,
@@ -688,6 +696,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CE1463D52435D6150089D7D5 /* XCRemoteSwiftPackageReference "SwiftUIPager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fermoya/SwiftUIPager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.1;
+			};
+		};
 		CEE47B982433CFF6005484BE /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver.git";
@@ -699,6 +715,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CE1463D62435D6150089D7D5 /* SwiftUIPager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE1463D52435D6150089D7D5 /* XCRemoteSwiftPackageReference "SwiftUIPager" */;
+			productName = SwiftUIPager;
+		};
 		CEE47B992433CFF6005484BE /* SwiftyBeaver */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CEE47B982433CFF6005484BE /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;

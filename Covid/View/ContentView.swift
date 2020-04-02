@@ -7,20 +7,9 @@
 //
 
 import SwiftUI
+import SwiftUIPager
 
 struct ContentView: View {
-    var body: some View {
-        Home()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView().environmentObject(Store(initialState: AppState(), reducer: Reducer.appReducer()))
-    }
-}
-
-struct Home: View {
     @EnvironmentObject
     private var store: Store<AppState, AppAction>
 
@@ -30,18 +19,7 @@ struct Home: View {
                 AllCasesCell()
 
                 if self.store.state.countryCases.count != 0 {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 15) {
-                            ForEach(self.store.state.countryCases, id: \.self) { i in
-                                NavigationLink(destination: Text(i.country)) {
-                                    CaseDetailCell(data: i)
-                                }
-                            }
-                        }
-                        .padding()
-
-                        Spacer()
-                    }
+                    CaseDetailPagerView(countries: self.store.state.countryCases)
                 } else {
                     Spacer()
                 }
@@ -50,6 +28,13 @@ struct Home: View {
         }.onAppear {
             self.store.send(.loadAllCases)
         }
+    }
+
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView().environmentObject(Store(initialState: AppState(), reducer: Reducer.appReducer()))
     }
 }
 
@@ -60,7 +45,8 @@ func getDate(time: Double?) -> String {
 
     let date = Double(d / 1000)
     let format = DateFormatter()
-    format.dateFormat = "MMM - dd - YYYY hh:mm a"
+    format.dateStyle = .medium
+    format.timeStyle = .medium
 
     return format.string(from: Date(timeIntervalSince1970: TimeInterval(exactly: date)!))
 }

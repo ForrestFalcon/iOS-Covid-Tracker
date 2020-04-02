@@ -10,11 +10,11 @@ import Foundation
 import SwiftUI
 
 struct CaseDetailCell: View {
-    var data : Details
+    var country: Details
 
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
-            Text(data.country)
+            Text(country.country)
                 .fontWeight(.bold)
 
             HStack(spacing: 15) {
@@ -22,7 +22,7 @@ struct CaseDetailCell: View {
                     Text("Active Cases")
                         .fontWeight(.bold)
 
-                    Text(getValue(data: data.cases))
+                    Text(getValue(data: country.cases))
                         .font(.title)
                 }
 
@@ -30,7 +30,7 @@ struct CaseDetailCell: View {
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Deaths")
 
-                        Text(getValue(data: data.deaths))
+                        Text(getValue(data: country.deaths))
                             .foregroundColor(.red)
                     }
 
@@ -39,7 +39,7 @@ struct CaseDetailCell: View {
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Recovered")
 
-                        Text(getValue(data: data.recovered))
+                        Text(getValue(data: country.recovered))
                             .foregroundColor(.green)
                     }
 
@@ -48,21 +48,21 @@ struct CaseDetailCell: View {
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Critical")
 
-                        Text(getValue(data: data.critical))
+                        Text(getValue(data: country.critical))
                             .foregroundColor(.yellow)
                     }
                 }
             }
         }
         .padding()
-        .frame(width: UIScreen.main.bounds.width - 30)
         .background(Color.white)
         .cornerRadius(20)
+        .shadow(radius: 3)
     }
 }
 
 struct CellView_Previews: PreviewProvider {
     static var previews: some View {
-        CaseDetailCell(data: Details(country: "Germany", cases: 0, deaths: 0, recovered: 0, critical: 0))
+        CaseDetailCell(country: Details(country: "Germany", cases: 0, deaths: 0, recovered: 0, critical: 0)).padding()
     }
 }

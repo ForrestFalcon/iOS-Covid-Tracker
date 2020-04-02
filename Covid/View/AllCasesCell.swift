@@ -23,7 +23,7 @@ struct AllCasesCell: View {
                     Text("Covid - 19 Cases")
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
-                    Text(getValue(data: self.store.state.allCases?.cases))
+                    Text("All cases: " + getValue(data: self.store.state.allCases?.cases))
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
                 }
@@ -56,6 +56,7 @@ struct AllCasesCell: View {
                     .padding(.vertical, 30)
                     .background(Color.white)
                     .cornerRadius(12)
+                    .shadow(radius: 3)
 
                 VStack(alignment: .leading, spacing: 15) {
                     Text("Recovered")
@@ -69,6 +70,7 @@ struct AllCasesCell: View {
                     .padding(.vertical, 30)
                     .background(Color.white)
                     .cornerRadius(12)
+                    .shadow(radius: 3)
             }
             .offset(y: -60)
             .padding(.bottom, -60)
@@ -86,6 +88,7 @@ struct AllCasesCell: View {
                 .padding(.vertical, 30)
                 .background(Color.white)
                 .cornerRadius(12)
+                .shadow(radius: 3)
                 .padding(.top, 15)
         }
     }
