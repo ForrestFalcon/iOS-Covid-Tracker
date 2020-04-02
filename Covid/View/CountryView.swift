@@ -45,7 +45,7 @@ struct CountryView: View {
             }
         }.onAppear {
             self.store.send(.loadCountryData(country: self.country))
-        }
+        }.navigationBarTitle(Text(country))
     }
 }
 
