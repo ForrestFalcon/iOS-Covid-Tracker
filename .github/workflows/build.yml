@@ -24,7 +24,7 @@ jobs:
       - name: Build and test
         run: |
           xcodebuild -version
-          xcodebuild clean test -project Covid.xcodeproj -scheme Covid -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+          xcodebuild clean test -project Covid.xcodeproj -scheme Covid -destination "${destination}" -enableCodeCoverage YES CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
         env: 
          destination: ${{ matrix.destination }}
       - name: Update Code Coverage
